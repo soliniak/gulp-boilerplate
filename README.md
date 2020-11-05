@@ -1,2 +1,3 @@
 # gulp-boilerplate
-Gulp bolierplate to start project with html as component, sass and js compiler
+
+Gulp bolierplate to start project with html as components, sass and js compiler.
