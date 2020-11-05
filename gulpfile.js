@@ -28,7 +28,7 @@ function handleJSFiles() {
     .pipe(babel({
       presets: ['@babel/env']
     }))
-    .pipe(concat('all.js'))
+    .pipe(concat('index.js'))
     .pipe(uglify())
     .pipe(rename({ extname: '.min.js' }))
     .pipe(sourcemaps.write('.'))
