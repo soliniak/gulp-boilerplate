@@ -16,11 +16,10 @@ const paths = {
   sass:         [ './style/*.sass' ],
   sassVendor:   [ './style/style.sass' ],
   css:          [ './style/' ],
-  cssVendor:    [ './dist/style/' ],
+  cssVendor:    [ './style/' ],
   js:           [ './js/*.js' ],
-  jsVendor:     [ './dist/js/' ],
+  jsVendor:     [ './js/' ],
   html:         [ './*.html'],
-  htmlVendor:   [ './dist/*.html']
 };
 
 function handleJSFiles() {
@@ -33,7 +32,7 @@ function handleJSFiles() {
     .pipe(uglify())
     .pipe(rename({ extname: '.min.js' }))
     .pipe(sourcemaps.write('.'))
-    .pipe(dest(paths.jsVendor));
+    .pipe(dest(paths.dest+paths.jsVendor));
 }
 
 var sassOptions = {
@@ -48,7 +47,7 @@ function handleSASSFiles() {
     .pipe(rename({ extname: '.min.css' }))
     // .pipe(gulp.dest(paths.css))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(paths.cssVendor));
+    .pipe(gulp.dest(paths.dest+paths.cssVendor));
 }
 
 function handleHTMLFiles() {
