@@ -1,6 +1,6 @@
 # Gulp Boilerplate - November 2020
 
-### Project Info
+## Project Info
 Gulp 4 bolierplate to start project with html as components, sass and js compiler.
 
 *   Compile SASS to CSS
