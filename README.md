@@ -1,6 +1,5 @@
 # Gulp Boilerplate - November 2020
 
-### Project Info
 Gulp 4 bolierplate to start project with html as components, sass and js compiler.
 
 *   Compile SASS to CSS
@@ -10,7 +9,7 @@ Gulp 4 bolierplate to start project with html as components, sass and js compile
 *   Listening for changes to update files
 *   Used `Go Live` build in VS Code
 
-### Usage
+## Usage
 
 *   Clone Git repo
 *   Install by running **`npm install`** on the commmand line
