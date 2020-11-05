@@ -8,10 +8,10 @@ Gulp 4 bolierplate to start project with html files as components, sass and js c
     *   import components to html file with `@import "filename.html"`
 *   Listening for changes to update files
 *   Used `Go Live` build in VS Code
+*   Compiled files will be located at `./dist/` (you can change that if you want to)
 
 ## Usage
 
 *   Clone Git repo
 *   Install by running **`npm install`** on the commmand line
 *   Run **`gulp`** on the command line.
-
