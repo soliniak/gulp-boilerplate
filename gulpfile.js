@@ -12,14 +12,15 @@ const htmlImport             = require('gulp-html-import');
 sass.compiler = require('node-sass');
 
 const paths = {
-  dest:         [ './dist/' ],
-  sass:         [ './style/*.sass' ],
-  sassVendor:   [ './style/style.sass' ],
-  css:          [ './style/' ],
-  cssVendor:    [ './style/' ],
-  js:           [ './js/*.js' ],
-  jsVendor:     [ './js/' ],
-  html:         [ './*.html'],
+  dest:             [ './dist/' ],
+  sass:             [ './style/*.sass' ],
+  sassVendor:       [ './style/style.sass' ],
+  css:              [ './style/' ],
+  cssVendor:        [ './style/' ],
+  js:               [ './js/*.js' ],
+  jsVendor:         [ './js/' ],
+  html:             [ './*.html'],
+  htmlComponents:   [ './components/**/*.html' ]
 };
 
 function handleJSFiles() {
@@ -45,7 +46,6 @@ function handleSASSFiles() {
     .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(prefix())
     .pipe(rename({ extname: '.min.css' }))
-    // .pipe(gulp.dest(paths.css))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.dest+paths.cssVendor));
 }
@@ -57,7 +57,7 @@ function handleHTMLFiles() {
 }
 
 exports.default = function() {
-  watch(paths.html, { ignoreInitial: false}, handleHTMLFiles);
-  watch(paths.js,  { ignoreInitial: false }, handleJSFiles);
-  watch(paths.sass,  { ignoreInitial: false }, handleSASSFiles);
+  gulp.watch([ `${paths.html}`, `${paths.htmlComponents}` ], handleHTMLFiles);
+  gulp.watch(paths.js,  { ignoreInitial: false }, handleJSFiles);
+  gulp.watch(paths.sass,  { ignoreInitial: false }, handleSASSFiles);
 };
